@@ -8,6 +8,7 @@ describe('Sequential Then', () => {
   it('should execute all the promises sequentially', () => {
     return waterfall([
       val => {
+        assert.equal(val, 0)
         return wait(1).then(() => {
           assert(!val)
           return 1
@@ -25,7 +26,7 @@ describe('Sequential Then', () => {
           return 3
         })
       },
-    ])
+    ])(0)
   })
 
   it('should handle synchronous errors', () => {
@@ -33,7 +34,7 @@ describe('Sequential Then', () => {
       () => {
         throw new Error('yay')
       }
-    ]).then(() => {
+    ])().then(() => {
       throw new Error('boom')
     }).catch(err => {
       assert.equal(err.message, 'yay')
@@ -41,12 +42,10 @@ describe('Sequential Then', () => {
   })
 
   it('should throw if a function is not passed', () => {
-    return waterfall([
-      true
-    ]).then(() => {
-      throw new Error('boom')
-    }).catch(err => {
-      assert(err.message !== 'boom')
+    assert.throws(() => {
+      waterfall([
+        true
+      ])
     })
   })
 })

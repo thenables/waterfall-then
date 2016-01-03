@@ -14,8 +14,9 @@ Sequentially resolve a series of promise-returning function, returning the previ
 const waterfall = require('waterfall-then')
 const assert = require('assert')
 
-waterfall([
+const fn = waterfall([
   val => {
+    assert.equal(val, 0)
     return Promise.resolve(1)
   },
   val => {
@@ -26,7 +27,9 @@ waterfall([
     assert.equal(val, 2)
     return Promise.resolve(3)
   }
-]).then(val => {
+])
+
+fn(0).then(val => {
   assert.equal(val, 3)
 })
 ```
