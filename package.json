@@ -6,8 +6,8 @@
   "license": "MIT",
   "repository": "jonathanong/waterfall-then",
   "dependencies": {
-    "lodash": "^4.0.0",
-    "native-or-bluebird": "^1.2.0"
+    "any-promise": "^1.1.0",
+    "lodash": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0",
