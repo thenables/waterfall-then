@@ -1,7 +1,7 @@
 {
   "name": "waterfall-then",
   "description": "waterfall/sequential chaining of promise-returning functions",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
   "license": "MIT",
   "repository": "jonathanong/waterfall-then",
