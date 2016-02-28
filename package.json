@@ -6,20 +6,20 @@
   "license": "MIT",
   "repository": "jonathanong/waterfall-then",
   "dependencies": {
-    "lodash": "^3.10.1",
+    "lodash": "^4.0.0",
     "native-or-bluebird": "^1.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "4",
+    "babel-eslint": "^5.0.0",
     "bluebird": "^3.1.1",
-    "codecov": "1",
-    "eslint": "1",
-    "eslint-config-jongleberry": "1",
-    "eslint-plugin-react": "^3.13.1",
-    "eslint-plugin-standard": "1",
-    "ghooks": "1",
-    "mocha": "2",
-    "nyc": "5"
+    "codecov": "^1.0.0",
+    "eslint": "^2.0.0",
+    "eslint-config-jongleberry": "^2.0.0",
+    "eslint-plugin-promise": "^1.0.8",
+    "eslint-plugin-standard": "^1.0.0",
+    "ghooks": "^1.0.0",
+    "mocha": "^2.0.0",
+    "nyc": "^5.0.0"
   },
   "scripts": {
     "lint": "eslint --cache lib test",
