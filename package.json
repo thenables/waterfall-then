@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0",
-    "bluebird": "^3.1.1",
+    "bluebird": "^3.3.4",
     "codecov": "^1.0.0",
     "eslint": "^2.0.0",
     "eslint-config-jongleberry": "^2.0.0",
