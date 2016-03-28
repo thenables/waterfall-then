@@ -1,5 +1,7 @@
 'use strict'
 
+/* eslint-env mocha */
+
 const assert = require('assert')
 
 const waterfall = require('..')
@@ -7,25 +9,25 @@ const waterfall = require('..')
 describe('Sequential Then', () => {
   it('should execute all the promises sequentially', () => {
     return waterfall([
-      val => {
+      (val) => {
         assert.equal(val, 0)
         return wait(1).then(() => {
           assert(!val)
           return 1
         })
       },
-      val => {
+      (val) => {
         wait(1).then(() => {
           assert.equal(val, 1)
           return 2
         })
       },
-      val => {
+      (val) => {
         wait(1).then(() => {
           assert.equal(val, 2)
           return 3
         })
-      },
+      }
     ])(0)
   })
 
@@ -36,7 +38,7 @@ describe('Sequential Then', () => {
       }
     ])().then(() => {
       throw new Error('boom')
-    }).catch(err => {
+    }).catch((err) => {
       assert.equal(err.message, 'yay')
     })
   })
@@ -51,7 +53,7 @@ describe('Sequential Then', () => {
 })
 
 function wait (ms) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, ms)
   })
 }

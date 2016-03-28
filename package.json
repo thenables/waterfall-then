@@ -10,19 +10,14 @@
     "lodash": "^4.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^5.0.0",
     "bluebird": "^3.1.1",
     "codecov": "^1.0.0",
-    "eslint": "^2.0.0",
-    "eslint-config-jongleberry": "^2.0.0",
-    "eslint-plugin-promise": "^1.0.8",
-    "eslint-plugin-standard": "^1.0.0",
-    "ghooks": "^1.0.0",
     "mocha": "^2.0.0",
-    "nyc": "^6.0.0"
+    "nyc": "^6.0.0",
+    "standard": "^6.0.8"
   },
   "scripts": {
-    "lint": "eslint --cache lib test",
+    "lint": "standard lib/**/*.js test/**/*.js",
     "test": "mocha",
     "test-cov": "nyc node_modules/mocha/bin/_mocha && nyc report --reporter=lcov"
   },
